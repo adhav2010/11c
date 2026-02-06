@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Farewell – Class 11 Section C</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background: radial-gradient(1200px 600px at 10% -10%, #fde68a22, transparent), radial-gradient(1200px 600px at 110% 10%, #a5b4fc22, transparent), #0b1020; }
+    .glass { background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); }
+  </style>
+</head>
+<body class="text-white min-h-screen">
+
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-6 py-20">
+    <div class="glass rounded-3xl p-10 shadow-2xl text-center">
+      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">Farewell, <span class="text-amber-300">Class 11 – Section C</span> ✨</h1>
+      <p class="mt-4 text-xl md:text-2xl font-semibold tracking-wide text-indigo-200">“EAST OR WEST 11C IS THE BEST”</p>
+      <p class="mt-6 text-lg text-slate-200 max-w-3xl mx-auto">A chapter closes, memories stay. Section C — thank you for the laughs, lessons, inside jokes, and late-night revisions.</p>
+    </div>
+  </section>
+
+  <!-- Students Wall -->
+  <section id="students" class="max-w-6xl mx-auto px-6 py-10">
+    <h2 class="text-3xl font-bold mb-6 text-center">Leave a Message for Your Friends</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <!-- Example student cards -->
+      <div class="glass rounded-2xl p-6">
+        <h3 class="text-xl font-semibold mb-2">AADHAV</h3>
+        <textarea rows="3" placeholder="Write your message for AADHAV" class="w-full p-2 rounded-md bg-white/10 border border-white/20 text-slate-900 focus:outline-none"></textarea>
+        <button onclick="addStudentMessage(this)" class="mt-2 px-4 py-2 rounded-xl bg-indigo-400 text-slate-900 font-semibold">Post</button>
+        <div class="mt-4 messages space-y-2"></div>
+      </div>
+
+      <div class="glass rounded-2xl p-6">
+        <h3 class="text-xl font-semibold mb-2">[STUDENT 2]</h3>
+        <textarea rows="3" placeholder="Write your message for [STUDENT 2]" class="w-full p-2 rounded-md bg-white/10 border border-white/20 text-slate-900 focus:outline-none"></textarea>
+        <button onclick="addStudentMessage(this)" class="mt-2 px-4 py-2 rounded-xl bg-indigo-400 text-slate-900 font-semibold">Post</button>
+        <div class="mt-4 messages space-y-2"></div>
+      </div>
+      <!-- Add more student cards here -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 text-center text-slate-300">
+    Made with 💙 by Class 11 – Section C • Farewell 2026
+  </footer>
+
+  <script>
+    function addStudentMessage(button) {
+      const card = button.parentElement;
+      const textarea = card.querySelector('textarea');
+      const messagesDiv = card.querySelector('.messages');
+      const msg = textarea.value.trim();
+      if (!msg) return;
+      const p = document.createElement('p');
+      p.className = 'glass p-2 rounded-md text-slate-900';
+      p.textContent = msg;
+      messagesDiv.prepend(p);
+      textarea.value = '';
+    }
+  </script>
+</body>
+</html>
